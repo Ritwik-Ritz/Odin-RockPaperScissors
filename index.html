@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RockPaperScissors</title>
+</head>
+<body>
+    <script>
+        
+        choiceArray = ['rock', 'paper', 'scissors'];
+
+        const computerSelection = getComputerChoice();
+        const playerSelection = prompt("Enter your choice?").toLowerCase;
+        
+        function getComputerChoice()
+        {
+            //returns a random int between 0 to 2
+            var choiceIndex = Math.floor(Math.random()*3);
+            return choiceArray[choiceIndex];
+        }
+
+        function playRound(computerSelection, playerSelection)
+        {
+            if(computerSelection=='rock')
+            {
+                if(playerSelection == 'rock')
+                return "It's a tie!!!";
+                else if(playerSelection =='paper')
+                return "player wins!!!";
+                else
+                return "Computer wins!!";
+            }
+            else if(computerSelection =='paper')
+            {
+                if(playerSelection == 'rock')
+                return "Computer wins!!";
+                else if(playerSelection =='paper')
+                return "It's a tie!!!";
+                else
+                return "player wins!!!";
+            }
+            else
+            {
+                if(playerSelection == 'rock')
+                return "player wins!!!";
+                else if(playerSelection =='paper')
+                return "Computer wins!!";
+                else
+                return "It's a tie!!!";
+            }
+        }
+
+        console.log(playRound(computerSelection, playerSelection));
+
+    </script>
+    
+</body>
+</html>
